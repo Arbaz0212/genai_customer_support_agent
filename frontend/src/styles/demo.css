@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* GLASS WEBSITE */
+.demo-container {
+  min-height: 100vh;
+  padding-bottom: 120px;
+  backdrop-filter: blur(20px);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 80px;
+  color: white;
+}
+
+.nav-links span {
+  margin-left: 30px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.nav-links span:hover {
+  opacity: 1;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 80px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.hero p {
+  margin-top: 15px;
+  opacity: 0.85;
+}
+
+.shop-btn {
+  margin-top: 30px;
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.shop-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* PRODUCTS */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 90px;
+}
+
+.card {
+  width: 260px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  text-align: center;
+  transition: 0.4s;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+}
+
+/* FLOATING BUTTON */
+.chat-logo {
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 22px;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.chat-logo:hover {
+  transform: scale(1.15);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* CHAT BOX */
+.chat-modal {
+  width: 600px;
+  height: 580px;
+  background: rgba(20,20,20,0.85);
+  backdrop-filter: blur(25px);
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  overflow: hidden;
+  transform-origin: bottom right;
+  animation: popupCenter 0.35s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+/* HEADER */
+.chat-header {
+  position: relative;
+  padding: 18px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* CHAT BODY */
+.chat-body-only {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* USER RHS */
+.user-msg {
+  align-self: flex-end;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 16px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+  color: white;
+  max-width: 70%;
+}
+
+/* BOT LHS */
+.bot-msg {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.08);
+  padding: 10px 16px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+  color: white;
+  max-width: 70%;
+}
+
+/* INPUT */
+.chat-input {
+  display: flex;
+  padding: 15px;
+  background: rgba(0,0,0,0.5);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes popupCenter {
+  0% {
+    transform: translate(300px, 300px) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0,0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popupBack {
+  0% {
+    transform: translate(0,0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(300px, 300px) scale(0.5);
+    opacity: 0;
+  }
+}
+.chat-modal.closing {
+  animation: popupBack 0.3s forwards;
+}
+.chat-header button {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
